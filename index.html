@@ -22,7 +22,7 @@
                 <div class="slider"></div>
                 <!-- nav-bar-items -->
                 <div class="nav-item item-1">
-                    <i class="fa-regular fa-house"></i> 
+                    <i class="fa-regular fa-house"></i>
                     <a id="home" href="">Home</a>
                 </div>
 
@@ -44,91 +44,104 @@
     </header>
     <!------------------------->
     <main>
-        <div class="site-description-area">
-            <h1>WhisprChat — Private Conversations, Zero Noise</h1>
-            <p>WhisprChat is a privacy-focused messaging platform built for secure and distraction-free communication.
-                 Designed with strong privacy principles, it keeps your conversations protected and fully under your control. 
-                 We do not track activity or collect unnecessary data, allowing you to chat with confidence in a clean and 
-                 trusted environment.
-                <br><br>
-                <b>Please fill out the form on the right to sign up and begin your private messaging experience with WhisprChat.</b>
+        <section class="home">
+            <div class="site-description-area">
+                <h1>WhisprChat — Private Conversations, Zero Noise</h1>
+                <p>WhisprChat is a privacy-focused messaging platform built for secure and distraction-free
+                    communication.
+                    Designed with strong privacy principles, it keeps your conversations protected and fully under your
+                    control.
+                    We do not track activity or collect unnecessary data, allowing you to chat with confidence in a
+                    clean and
+                    trusted environment.
+                    <br><br>
+                    <b>Please fill out the form to begin your private messaging experience with
+                        WhisprChat.</b>
                 </p>
-            <button class="learn-more-btn">Learn More</button>
-        </div>
-        <div class="container">
-            <!-- Signup Form -->
-            <div id="signup-form" class="form active">
-                <h2><i class="fas fa-user-plus"></i> Sign Up</h2>
-                <div id="signup-alert" class="alert"></div>
-                <form id="signup">
-                    <div class="input-group">
-                        <label for="signup-email">Gmail Username</label>
-                        <div class="input-wrapper">
-                            <input type="email" id="signup-email" name="email" required placeholder="yourname@gmail.com">
-                            <i class="fas fa-envelope"></i>
+                <button class="learn-more-btn">Learn More</button>
+            </div>
+            <div class="container">
+                <!-- Signup Form -->
+                <div id="signup-form" class="form active">
+                    <h2><i class="fas fa-user-plus"></i> Sign Up</h2>
+                    <div id="signup-alert" class="alert"></div>
+                    <form id="signup">
+                        <div class="input-group">
+                            <label for="signup-email">Gmail Username</label>
+                            <div class="input-wrapper">
+                                <input type="email" id="signup-email" name="email" required
+                                    placeholder="yourname@gmail.com">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="signup-password">Password</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="signup-password" name="password" required
+                                    placeholder="Enter password">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary form-btn">Sign Up</button>
+                    </form>
+                    <div class="or-text">Or sign up with</div>
+                    <div class="social-icons">
+                        <div class="social-icon google" onclick="handleSocial('Google')" title="Sign up with Google">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="social-icon facebook" onclick="handleSocial('Facebook')"
+                            title="Sign up with Facebook">
+                            <i class="fab fa-facebook-f"></i>
                         </div>
                     </div>
-                    <div class="input-group">
-                        <label for="signup-password">Password</label>
-                        <div class="input-wrapper">
-                            <input type="password" id="signup-password" name="password" required placeholder="Enter password">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn-primary form-btn">Sign Up</button>
-                </form>
-                <div class="or-text">Or sign up with</div>
-                <div class="social-icons">
-                    <div class="social-icon google" onclick="handleSocial('Google')" title="Sign up with Google">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <div class="social-icon facebook" onclick="handleSocial('Facebook')" title="Sign up with Facebook">
-                        <i class="fab fa-facebook-f"></i>
+                    <div class="switch-link">
+                        Already registered? <a href="#" onclick="switchForm('login')">Login</a>
                     </div>
                 </div>
-                <div class="switch-link">
-                    Already registered? <a href="#" onclick="switchForm('login')">Login</a>
+
+                <!-- Login Form -->
+                <div id="login-form" class="form">
+                    <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+                    <div id="login-alert" class="alert"></div>
+                    <form id="login">
+                        <div class="input-group">
+                            <label for="login-email">Username/Gmail</label>
+                            <div class="input-wrapper">
+                                <input type="email" id="login-email" name="email" required
+                                    placeholder="yourname@gmail.com">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="login-password">Password</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="login-password" name="password" required
+                                    placeholder="Enter password">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary form-btn">Login</button>
+                    </form>
+                    <div class="or-text">Or continue with</div>
+                    <div class="social-icons">
+                        <div class="social-icon google" onclick="handleSocial('Google')" title="Continue with Google">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="social-icon facebook" onclick="handleSocial('Facebook')"
+                            title="Continue with Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                    </div>
+                    <div class="forgot-link">
+                        <a href="#" onclick="alert('Forgot password? Feature not implemented yet.')">Forgot
+                            password?</a>
+                    </div>
+                    <div class="switch-link">
+                        Don't have an account? <a href="#" onclick="switchForm('signup')">Sign up</a>
+                    </div>
                 </div>
             </div>
-    
-            <!-- Login Form -->
-            <div id="login-form" class="form">
-                <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
-                <div id="login-alert" class="alert"></div>
-                <form id="login">
-                    <div class="input-group">
-                        <label for="login-email">Username/Gmail</label>
-                        <div class="input-wrapper">
-                            <input type="email" id="login-email" name="email" required placeholder="yourname@gmail.com">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label for="login-password">Password</label>
-                        <div class="input-wrapper">
-                            <input type="password" id="login-password" name="password" required placeholder="Enter password">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn-primary form-btn">Login</button>
-                </form>
-                <div class="or-text">Or continue with</div>
-                <div class="social-icons">
-                    <div class="social-icon google" onclick="handleSocial('Google')" title="Continue with Google">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <div class="social-icon facebook" onclick="handleSocial('Facebook')" title="Continue with Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </div>
-                </div>
-                <div class="forgot-link">
-                    <a href="#" onclick="alert('Forgot password? Feature not implemented yet.')">Forgot password?</a>
-                </div>
-                <div class="switch-link">
-                    Don't have an account? <a href="#" onclick="switchForm('signup')">Sign up</a>
-                </div>
-            </div>
-        </div>
+        </section>
     </main>
     <footer>
 

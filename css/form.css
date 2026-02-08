@@ -15,6 +15,8 @@ body {
 
 /* -------------styles for header and navbar-------------- */
 
+
+
 header {
 
     height: 15vh;
@@ -119,11 +121,14 @@ header .logo-area img {
 }
 
 
+main{
+    width: 100%;
+}
 
-main {
+.home {
     /* border: 1px solid red; */
     display: flex;
-    height: 80vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -167,6 +172,73 @@ main {
     margin-top: 20px;
 }
 
+/* responsive home page */
+@media (max-width: 500px){ 
+    header .navbar-items-area{
+        display: none;
+    }
+    
+
+    header{
+        margin-top: 10px;
+        height: 110px;
+        width: 100%;
+    }
+
+    header nav{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .logo-area{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        width: 80%;
+        height: 90%;
+    }
+
+    header .logo-area img{
+        height: 100px;
+    }
+
+    .home{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .site-description-area{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 50px;
+    }
+
+    .site-description-area h1{
+        text-align: center;
+        width: 100%;
+        font-size: 25px;
+    }
+
+    .site-description-area p{
+        width: 90%;
+        text-align: center;
+    }
+
+    .site-description-area .learn-more-btn{
+        width: 65%;
+    }
+}
 
 /* ------------------form styless---------------- */
 
@@ -459,8 +531,9 @@ input:focus+i {
     .container {
         padding: 20px;
         margin: 10px;
-        max-width: 280px;
+        max-width: 330px;
         min-height: 340px;
+        margin-bottom: 30px;
     }
 
     .form {
@@ -484,3 +557,6 @@ input:focus+i {
         height: 35px;
     }
 }
+
+
+
