@@ -34,9 +34,11 @@ navbar.addEventListener('mouseleave', () => {
     setActive(defaultItem);
     moveSlider(defaultItem);
 });
+
 //--------------------------------------------------------
 
 
+// Forms js
 
 
  // Function to switch between forms
