@@ -255,6 +255,7 @@ main{
     overflow: hidden;
     min-height: 380px;
     margin-right: 100px;
+    margin-top: 30px;
 }
 
 .form {
