@@ -41,8 +41,8 @@ navbar.addEventListener('mouseleave', () => {
 // Forms js
 
 
- // Function to switch between forms
- function switchForm(formType) {
+// Function to switch between forms
+function switchForm(formType) {
     const signupForm = document.getElementById('signup-form');
     const loginForm = document.getElementById('login-form');
     if (formType === 'login') {
@@ -103,7 +103,7 @@ function validateForm(formId) {
 }
 
 // Attach validation to forms
-document.getElementById('signup').addEventListener('submit', function(e) {
+document.getElementById('signup').addEventListener('submit', function (e) {
     e.preventDefault();
     if (validateForm('signup')) {
         console.log('Signup successful!');
@@ -111,10 +111,70 @@ document.getElementById('signup').addEventListener('submit', function(e) {
     }
 });
 
-document.getElementById('login').addEventListener('submit', function(e) {
+document.getElementById('login').addEventListener('submit', function (e) {
     e.preventDefault();
     if (validateForm('login')) {
         console.log('Login successful!');
         // Handle login logic here (e.g., send to server)
+    }
+});
+
+
+
+
+// for about and contact pop up
+
+const aboutLink = document.getElementById('about-us');
+const contactLink = document.getElementById('contact-us');
+const aboutSection = document.getElementById('about-section');
+const contactSection = document.getElementById('contact-section');
+const closeAbout = document.getElementById('close-about');
+const closeContact = document.getElementById('close-contact');
+
+// Function to show section
+function showSection(section) {
+    section.style.display = 'flex';
+    setTimeout(() => {
+        section.classList.add('show');
+    }, 10); // Small delay to allow display change
+}
+
+// Function to hide section
+function hideSection(section) {
+    section.classList.remove('show');
+    setTimeout(() => {
+        section.style.display = 'none';
+    }, 500); // Match transition duration
+}
+
+// Event listeners
+aboutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection(aboutSection);
+});
+
+contactLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection(contactSection);
+});
+
+closeAbout.addEventListener('click', () => {
+    hideSection(aboutSection);
+});
+
+closeContact.addEventListener('click', () => {
+    hideSection(contactSection);
+});
+
+// Close on overlay click
+aboutSection.addEventListener('click', (e) => {
+    if (e.target === aboutSection) {
+        hideSection(aboutSection);
+    }
+});
+
+contactSection.addEventListener('click', (e) => {
+    if (e.target === contactSection) {
+        hideSection(contactSection);
     }
 });
