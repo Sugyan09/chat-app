@@ -32,3 +32,5 @@ function signInWithGoogle(){
 const signUpButton = document.getElementById('Sign-Up')
 //when signup button is clicked     
 signUpButton.addEventListener("click", signInWithGoogle);
+const signWithGoogleUpButton = document.getElementById('signWithGoogleUpButton')
+signWithGoogleUpButton.addEventListener("click", signInWithGoogle);
