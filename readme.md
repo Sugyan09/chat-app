@@ -1,5 +1,5 @@
 # handel errors
-i expect sugyan to handel the errors ,rather than showing a alert i want the error to directly showup in the login form 
+i expect sugyan to handel the errors ,rather than showing a alert i want the error to directly showup in the login form   
 known errors are :  
     1.user closes the login popup without logging in  
     2.when user tries to signup with a accont that is already logged in:  
