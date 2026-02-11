@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-app.js'
-import { getAuth,GoogleAuthProvider,signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-auth.js'
+import { getAuth,GoogleAuthProvider,signInWithPopup, onAuthStateChanged,FacebookAuthProvider,createUserWithEmailAndPassword,signInWithEmailAndPassword   } from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-auth.js'
 
 // web app's Firebase configuration
 const firebaseConfig = {
@@ -15,6 +15,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 //initialize auth
 const auth = getAuth();
+//cheking if the user is logged in
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+   //  window.location.href = 'afterlogin.html'
+  }
+});
 //getting goole auth provider
 const googleAuthProvider = new GoogleAuthProvider();
 //sign in popup
@@ -28,15 +34,78 @@ function signInWithGoogle(){
       console.error("Auth error:", error.code, error.message);
     });
 }
-//getting the signup btton
-const signUpButton = document.getElementById('Sign-Up')
-//when signup button is clicked     
-signUpButton.addEventListener("click", signInWithGoogle);
+//signin popup for facebook signin
+function signInWithFacebook(){
+   const provider = new FacebookAuthProvider(); // ✅ create instance
+  signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log("Logged in user:", user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+}
+//email signup
+async function signUpWithEmail() {
+  //getting data from form
+const email = document.getElementById("signup-email").value;
+const password = document.getElementById("signup-password").value;
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+    console.log("User signed up:", user);
+  } catch (error) {
+    if(error.code == 'auth/email-already-in-use'){
+      alert('Email Already In Use')
+    }
+    else{
+      console.log(error.code);
+    }
+  }
+}
+//email lgoin
+async function signInWithEmail() {
+  //getting data from form
+const email = document.getElementById("login-email").value;
+const password = document.getElementById("login-password").value;
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+    console.log("User signed up:", user);
+  } catch (error) {
+    if(error.code == 'auth/invalid-email'){
+      alert('Email Invalid')
+    }
+    else if (error.code == 'auth/invalid-login-credentials'){
+      alert('Invalid login creds')
+    }
+    else{
+      console.error(error.code);
+    }
+  }
+}
+//get email signup bton
+const signUpWithEmailButton = document.getElementById('signUpWithEmailButton')
+//after click
+signUpWithEmailButton.addEventListener("click", await signUpWithEmail);
+//get email signup bton
+const signInWithEmailButton = document.getElementById('signInWithEmailButton')
+//after click
+signInWithEmailButton.addEventListener("click", await signInWithEmail);
 //getting signup with google
-const signWithGoogleUpButton = document.getElementById('signWithGoogleUpButton')
+const signUpWithGoogleButton = document.getElementById('signUpWithGoogleButton')
 //after clicking google icon
-signWithGoogleUpButton.addEventListener("click", signInWithGoogle);
+signUpWithGoogleButton.addEventListener("click", signInWithGoogle);
 //getting signIn with google
 const signInWithGoogleButton = document.getElementById('signInWithGoogleButton')
 //after clicking
 signInWithGoogleButton.addEventListener("click", signInWithGoogle);
+//getting signup with google
+const signUpWithFacebookButton = document.getElementById('signUpWithFacebookButton')
+//after clicking google icon
+signUpWithFacebookButton.addEventListener("click", signInWithFacebook);
+//getting signIn with google
+const signInWithFacebookButton = document.getElementById('signInWithFacebookButton')
+//after clicking
+signInWithFacebookButton.addEventListener("click", signInWithFacebook);

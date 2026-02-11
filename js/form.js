@@ -106,7 +106,7 @@ function validateForm(formId) {
 document.getElementById('signup').addEventListener('submit', function (e) {
     e.preventDefault();
     if (validateForm('signup')) {
-        console.log('Signup successful!');
+       // console.log('Signup successful!');
         // Handle signup logic here (e.g., send to server)
     }
 });
@@ -114,7 +114,7 @@ document.getElementById('signup').addEventListener('submit', function (e) {
 document.getElementById('login').addEventListener('submit', function (e) {
     e.preventDefault();
     if (validateForm('login')) {
-        console.log('Login successful!');
+        //console.log('Login successful!');
         // Handle login logic here (e.g., send to server)
     }
 });
