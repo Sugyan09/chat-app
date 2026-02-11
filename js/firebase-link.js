@@ -15,7 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 //initialize auth
 const auth = getAuth();
-//cheking if the user is logged in
+//cheking if the user is logged in expect sugyan to uncoment this part when working on the actual chat app
 onAuthStateChanged(auth, (user) => {
   if (user) {
    //  window.location.href = 'afterlogin.html'
@@ -57,7 +57,7 @@ const password = document.getElementById("signup-password").value;
     console.log("User signed up:", user);
   } catch (error) {
     if(error.code == 'auth/email-already-in-use'){
-      alert('Email Already In Use')
+      alert('Email Already In Use')//add a better way to tell the user that the email is aready in use
     }
     else{
       console.log(error.code);
@@ -75,10 +75,10 @@ const password = document.getElementById("login-password").value;
     console.log("User signed up:", user);
   } catch (error) {
     if(error.code == 'auth/invalid-email'){
-      alert('Email Invalid')
+      alert('Email Invalid')//add a bette way to give this info to the user
     }
     else if (error.code == 'auth/invalid-login-credentials'){
-      alert('Invalid login creds')
+      alert('Invalid login creds')//add a bette way to give this info to the user
     }
     else{
       console.error(error.code);

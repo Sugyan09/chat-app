@@ -55,6 +55,7 @@ function switchForm(formType) {
 }
 
 // Handle social login/signup (placeholder)
+//amshu did it in firebase-link.js coz it was easier as all functions were already imported there
 function handleSocial(provider) {
     console.log(`Redirecting to ${provider} OAuth...`);
     // In a real app, integrate with OAuth library here
