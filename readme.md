@@ -1,6 +1,6 @@
 # handel errors
 i expect sugyan to handel the errors ,rather than showing a alert i want the error to directly showup in the login form 
-known errors are :
+known errors are :  
     1.user closes the login popup without logging in  
     2.when user tries to signup with a accont that is already logged in:  
         note:if you use a google account , the email linked to that google account cannot be used to create a new account   
