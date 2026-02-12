@@ -9,6 +9,7 @@
 
 body {
     height: 100vh;
+    
 }
 
 
@@ -586,8 +587,6 @@ input:focus+i {
 
 /* Content box */
 .content-box {
-    padding-top: 30px;
-    padding-bottom: 30px;
     background-color: white;
     width: 80%;
     height: 85%;
@@ -595,8 +594,6 @@ input:focus+i {
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
 }
 
 .close-btn {
@@ -616,18 +613,28 @@ input:focus+i {
 }
 
 .content-body {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 30px 35px;
+    height: 100%;
+    width: 100%;
 }
 
-/* About Us Styles */
-/* Contact Us Styles */
+.about-us{
+    height: 100%;
+    width: 100%;
+}
 
+.about-us h1{
+    color: #222;
+    font-size: 40px;
+}
+
+.about-us p{
+    margin-top: 10px;
+    color: #666;
+    font-weight: 600;
+    font-size: 0.95em;
+    width: 80%;
+}
 
 /* Hide sections by default */
 #about-section,

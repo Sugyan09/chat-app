@@ -1,3 +1,5 @@
+
+
 // code for moving slider in navbar
 const navbar = document.querySelector('.navbar-items-area');
 const slider = document.querySelector('.slider');
